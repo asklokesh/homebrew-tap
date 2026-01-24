@@ -1,9 +1,10 @@
 class LokiMode < Formula
-  desc "Multi-agent autonomous startup system for Claude Code"
-  homepage "https://github.com/asklokesh/loki-mode"
-  url "https://github.com/asklokesh/loki-mode.git", tag: "v4.2.0"
+  desc "DEPRECATED: Use loki-loop instead. Multi-agent autonomous startup system."
+  homepage "https://github.com/asklokesh/loki-loop"
+  url "https://github.com/asklokesh/loki-loop.git", tag: "v4.3.0"
   license "MIT"
-  head "https://github.com/asklokesh/loki-mode.git", branch: "main"
+
+  deprecate! date: "2026-01-23", because: "renamed to loki-loop"
 
   depends_on "bash"
   depends_on "git"
@@ -15,18 +16,13 @@ class LokiMode < Formula
 
   def caveats
     <<~EOS
-      Loki Mode installed successfully!
+      WARNING: loki-mode has been renamed to loki-loop!
 
-      To use with Claude Code:
-        claude --dangerously-skip-permissions
+      Please migrate:
+        brew uninstall loki-mode
+        brew install loki-loop
 
-      Then say:
-        Loki Mode with PRD at ./my-prd.md
-
-      Or run directly:
-        loki start ./my-prd.md
-
-      Documentation: https://asklokesh.github.io/loki-mode/
+      The loki command will continue to work.
     EOS
   end
 
