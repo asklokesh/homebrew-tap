@@ -1,7 +1,7 @@
 class LokiMode < Formula
   desc "Multi-agent autonomous startup system - Claude Code, Codex CLI, Gemini CLI"
   homepage "https://github.com/asklokesh/loki-mode"
-  url "https://github.com/asklokesh/loki-mode.git", tag: "v5.1.2"
+  url "https://github.com/asklokesh/loki-mode.git", tag: "v5.1.3"
   license "MIT"
 
   depends_on "bash"
@@ -14,9 +14,9 @@ class LokiMode < Formula
 
   def caveats
     <<~EOS
-      Loki Mode v5.1.2 installed!
+      Loki Mode v5.1.3 installed!
 
-      Multi-Provider Support (v5.0.0+):
+      Multi-Provider Support:
         - Claude Code (full features)
         - OpenAI Codex CLI (degraded mode)
         - Google Gemini CLI (degraded mode)
@@ -27,10 +27,6 @@ class LokiMode < Formula
         loki start --provider gemini  - Start with Gemini
         loki status                   - Check status
         loki --help                   - Show all commands
-
-      Or in Claude Code:
-        claude --dangerously-skip-permissions
-        Then say: "Loki Mode"
 
       Docs: https://asklokesh.github.io/loki-mode/
     EOS
