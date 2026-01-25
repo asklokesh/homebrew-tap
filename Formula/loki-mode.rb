@@ -1,7 +1,7 @@
 class LokiMode < Formula
   desc "Multi-agent autonomous startup system - Claude Code, Codex CLI, Gemini CLI"
   homepage "https://github.com/asklokesh/loki-mode"
-  url "https://github.com/asklokesh/loki-mode.git", tag: "v5.1.1"
+  url "https://github.com/asklokesh/loki-mode.git", tag: "v5.1.2"
   license "MIT"
 
   depends_on "bash"
@@ -14,7 +14,7 @@ class LokiMode < Formula
 
   def caveats
     <<~EOS
-      Loki Mode v5.1.1 installed!
+      Loki Mode v5.1.2 installed!
 
       Multi-Provider Support (v5.0.0+):
         - Claude Code (full features)
