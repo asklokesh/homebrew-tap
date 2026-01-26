@@ -1,38 +1,18 @@
 class LokiMode < Formula
-  desc "Multi-agent autonomous startup system - Claude Code, Codex CLI, Gemini CLI"
+  desc "Multi-agent autonomous startup system for Claude Code, Codex CLI, and Gemini CLI"
   homepage "https://github.com/asklokesh/loki-mode"
-  url "https://github.com/asklokesh/loki-mode.git", tag: "v5.1.3"
+  url "https://github.com/asklokesh/loki-mode/archive/refs/tags/v5.2.0.tar.gz"
+  sha256 "efbdcf82668455419511e2907a1f8e5faa79c2f16a34c62a701ed5b6bb6df072"
   license "MIT"
 
-  depends_on "bash"
-  depends_on "git"
+  depends_on "node"
 
   def install
-    prefix.install Dir["*"]
-    bin.install_symlink prefix/"autonomy/loki"
-  end
-
-  def caveats
-    <<~EOS
-      Loki Mode v5.1.3 installed!
-
-      Multi-Provider Support:
-        - Claude Code (full features)
-        - OpenAI Codex CLI (degraded mode)
-        - Google Gemini CLI (degraded mode)
-
-      Usage:
-        loki start [PRD]              - Start with Claude (default)
-        loki start --provider codex   - Start with Codex
-        loki start --provider gemini  - Start with Gemini
-        loki status                   - Check status
-        loki --help                   - Show all commands
-
-      Docs: https://asklokesh.github.io/loki-mode/
-    EOS
+    libexec.install Dir["*"]
+    bin.install_symlink libexec/"autonomy/loki" => "loki"
   end
 
   test do
-    system "#{bin}/loki", "version"
+    system "#{bin}/loki", "--version"
   end
 end
