@@ -1,8 +1,8 @@
 class LokiMode < Formula
   desc "Multi-agent autonomous startup system for Claude Code, Codex CLI, and Gemini CLI"
   homepage "https://github.com/asklokesh/loki-mode"
-  url "https://github.com/asklokesh/loki-mode/archive/refs/tags/v6.18.0.tar.gz"
-  sha256 "ac43ab2c8eb4057048ab500fed373888f3393a8137d201e60185ee7885edff1a"
+  url "https://github.com/asklokesh/loki-mode/archive/refs/tags/v6.19.0.tar.gz"
+  sha256 "690e1d7df57c204b472c96d760a033d0f1a2ecf30b8dc5addbd38048ea8e4331"
   license "MIT"
 
   depends_on "node"
