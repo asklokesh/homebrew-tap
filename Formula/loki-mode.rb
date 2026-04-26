@@ -1,8 +1,8 @@
 class LokiMode < Formula
   desc "Multi-agent autonomous startup system for Claude Code, Codex CLI, and Gemini CLI"
   homepage "https://github.com/asklokesh/loki-mode"
-  url "https://github.com/asklokesh/loki-mode/archive/refs/tags/v7.2.0.tar.gz"
-  sha256 "62d29278dc85dfef4e0e71bce9348e99a290a87d1658eaff6a993534c10aa8ce"
+  url "https://github.com/asklokesh/loki-mode/archive/refs/tags/v7.4.8.tar.gz"
+  sha256 "d11f0b019656ba53629a2c3ad673601f6924887fd1fab054ceba7cf5ea649e34"
   license "MIT"
 
   depends_on "node"
@@ -10,7 +10,11 @@ class LokiMode < Formula
 
   def install
     libexec.install Dir["*"]
-    bin.install_symlink libexec/"autonomy/loki" => "loki"
+    # v7.4.2 fix (BUG-4): bin/loki is the Bun-aware shim that routes
+    # ported commands to Bun and falls through to autonomy/loki for
+    # everything else. Linking bin/loki (NOT autonomy/loki) is
+    # required for brew users to get the Phase 2/3+ Bun route.
+    bin.install_symlink libexec/"bin/loki" => "loki"
   end
 
   test do
