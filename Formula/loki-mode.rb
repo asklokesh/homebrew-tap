@@ -1,8 +1,8 @@
 class LokiMode < Formula
   desc "Autonomous coding agent platform CLI for Claude Code, Codex CLI, Cline, and Aider"
   homepage "https://github.com/asklokesh/loki-mode"
-  url "https://github.com/asklokesh/loki-mode/releases/download/v10.5.10/loki-mode-10.5.10.tar.gz"
-  sha256 "560236ecfb5ae23995b6e1176786b400067043ab13268f7024d41bc36c1c8a63"
+  url "https://github.com/asklokesh/loki-mode/releases/download/v10.5.16/loki-mode-10.5.16.tar.gz"
+  sha256 "0eed18cd98ae1ff1deaff0a450588346fa9ae5a852c7f8295a2632924a7f8f9e"
   license "BUSL-1.1"
 
   depends_on "node"
@@ -10,10 +10,7 @@ class LokiMode < Formula
 
   def install
     libexec.install Dir["*"]
-    # v7.4.2 fix (BUG-4): bin/loki is the Bun-aware shim that routes
-    # ported commands to Bun and falls through to autonomy/loki for
-    # everything else. Linking bin/loki (NOT autonomy/loki) is
-    # required for brew users to get the Phase 2/3+ Bun route.
+    # bin/loki is the Bun-aware shim (v7.4.2 BUG-4); link it, not autonomy/loki.
     bin.install_symlink libexec/"bin/loki" => "loki"
   end
 
