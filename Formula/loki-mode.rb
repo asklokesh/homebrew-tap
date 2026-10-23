@@ -1,8 +1,8 @@
 class LokiMode < Formula
   desc "Autonomous coding agent platform CLI for Claude Code, Codex CLI, Cline, and Aider"
   homepage "https://github.com/asklokesh/loki-mode"
-  url "https://github.com/asklokesh/loki-mode/releases/download/v11.60.14/loki-mode-11.60.14.tar.gz"
-  sha256 "1761fab7d532ec8ed6971f57e66c8d147d1550117dcc6cf416de85838b16f099"
+  url "https://github.com/asklokesh/loki-mode/releases/download/v11.60.15/loki-mode-11.60.15.tar.gz"
+  sha256 "ae994adc62eb262854a670fe3a18b9b892f90c8df8ac9b70075eea4fe07a58be"
   license "BUSL-1.1"
 
   depends_on "node"
